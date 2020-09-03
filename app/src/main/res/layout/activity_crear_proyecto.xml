@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".CrearProyecto">
+
+    <EditText
+        android:id="@+id/CPUsuario"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/text_backgraunda"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        android:paddingStart="8dp"
+        android:paddingTop="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCP"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/CPDescripcion"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/text_backgraunda"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Descripción"
+        android:inputType="textMultiLine"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CPUsuario" />
+
+    <EditText
+        android:id="@+id/CPFecha"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:background="@drawable/text_backgraunda"
+        android:ems="5"
+        android:hint="Fecha"
+        android:inputType="date"
+        android:paddingStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/CPNumero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CPDescripcion"
+        app:layout_constraintTop_toBottomOf="@+id/txtCP"
+        app:layout_constraintVertical_bias="0.507" />
+
+    <EditText
+        android:id="@+id/CPNumero"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/text_backgraunda"
+        android:ems="10"
+        android:hint="Numero de teléfono"
+        android:inputType="number"
+        android:maxLength="10"
+        android:paddingStart="8dp"
+        android:paddingTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CPDescripcion" />
+
+    <TextView
+        android:id="@+id/txtCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Proyecto"
+        android:textColor="#01579B"
+        android:textIsSelectable="false"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/CPImagen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/subirFotos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CPNumero"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <Button
+        android:id="@+id/subirFotos"
+        style="@style/Botones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/button_rounded"
+        android:onClick="SubirFoto"
+        android:text="Foto"
+        app:layout_constraintBottom_toTopOf="@+id/guardarDatos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CPNumero"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/guardarDatos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded"
+        style="@style/Botones"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="CPGuardar"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Luwing</string>
+    <string name="botonestado">Crear Proyecto</string>
+    <string name="botongestion">Buscar Proyecto</string>
+    <string name="botoncrear">Crear Orden</string>
+    <string name="botoneditar">Editar Orden</string>
+    <string name="botoneliminar">Eliminar Orden</string>
+    <string name="botoningresar">Ingresar</string>
+    <string name="botoncontinuar">Continuar</string>
+    <string name="botonregresar">Regresar</string>
+    <string name="botoncrearcuenta">Crear cuenta</string>
+    <string name="botonguardar">Guardar</string>
+    <string name="txtingresar">VENTANA DE INGRESO</string>
+</resources>
