@@ -48,7 +48,12 @@ public class MainActivity extends AppCompatActivity {
 
     //entrar al login
     public void ingresar(View v) {
+<<<<<<< HEAD
         viewAnimator.showNext();
+=======
+        Intent intent = new Intent(MainActivity.this, Menu.class);
+        startActivity(intent);
+>>>>>>> 346976c... Commit secundario con avances
     }
 
     //regresar a la ventana 1

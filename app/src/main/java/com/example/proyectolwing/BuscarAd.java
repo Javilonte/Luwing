@@ -21,6 +21,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+<<<<<<< HEAD
+=======
+import android.widget.LinearLayout;
+>>>>>>> 346976c... Commit secundario con avances
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewAnimator;
@@ -34,11 +38,19 @@ import java.util.Date;
 
 public class BuscarAd extends AppCompatActivity {
 
+<<<<<<< HEAD
     private static final int DATABASE_VERSION = 4;
+=======
+    private static final int DATABASE_VERSION = 5;
+>>>>>>> 346976c... Commit secundario con avances
 
     ArrayList<Usuarios> listDatos;
     RecyclerView recyclerView;
     ViewAnimator viewAnimator;
+<<<<<<< HEAD
+=======
+    LinearLayout linearLayout;
+>>>>>>> 346976c... Commit secundario con avances
 
     Button buscar;
     EditText searchus;
@@ -50,6 +62,10 @@ public class BuscarAd extends AppCompatActivity {
     EditText epDescripcion;
     EditText epFecha;
     EditText epNumero;
+<<<<<<< HEAD
+=======
+    EditText epMonto;
+>>>>>>> 346976c... Commit secundario con avances
 
     Button eprecibido;
     Button epproceso;
@@ -69,6 +85,10 @@ public class BuscarAd extends AppCompatActivity {
         epFecha=(EditText)findViewById(R.id.EPFecha);
         epNumero=(EditText) findViewById(R.id.EPNumero);
         epimagen=(ImageView)findViewById(R.id.EPImagen);
+<<<<<<< HEAD
+=======
+        epMonto= (EditText)findViewById(R.id.EPMonto);
+>>>>>>> 346976c... Commit secundario con avances
 
         buscar=(Button)findViewById(R.id.Buscar);
         searchus=(EditText)findViewById(R.id.SearchUs);
@@ -76,6 +96,10 @@ public class BuscarAd extends AppCompatActivity {
         eprecibido=(Button)findViewById(R.id.EPrecibido);
         epproceso=(Button)findViewById(R.id.EPProceso);
         epterminado=(Button)findViewById(R.id.EPTerminado);
+<<<<<<< HEAD
+=======
+        linearLayout=(LinearLayout)findViewById(R.id.LinearAdminlist);
+>>>>>>> 346976c... Commit secundario con avances
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
         listDatos=new ArrayList<>();
@@ -119,14 +143,36 @@ public class BuscarAd extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos=baseLogin.getReadableDatabase();
         Cursor fila=BaseDeDatos.rawQuery("select * from usuarios",null);
 
+<<<<<<< HEAD
         while(fila.moveToNext()){
            Usuarios  usuario=new Usuarios(null,null,null,null,null,null);
+=======
+        fila.moveToLast();
+        Usuarios  pusuario=new Usuarios(null,null,null,null,null,null, 0, null);
+        pusuario.setNombre(fila.getString(2));
+        pusuario.setIdProyecto(fila.getString(0));
+        pusuario.setDescripcion(fila.getString(3));
+        pusuario.setFecha(fila.getString(4));
+        pusuario.setNumero(fila.getString(1));
+        pusuario.setFoto(getImage(fila.getBlob(5)));
+        pusuario.setEstado(fila.getInt(6));
+        pusuario.setMonto(fila.getString(7));
+        listDatos.add(pusuario);
+
+        while(fila.moveToPrevious()){
+           Usuarios  usuario=new Usuarios(null,null,null,null,null,null, 0, null);
+>>>>>>> 346976c... Commit secundario con avances
             usuario.setNombre(fila.getString(2));
             usuario.setIdProyecto(fila.getString(0));
             usuario.setDescripcion(fila.getString(3));
             usuario.setFecha(fila.getString(4));
             usuario.setNumero(fila.getString(1));
             usuario.setFoto(getImage(fila.getBlob(5)));
+<<<<<<< HEAD
+=======
+            usuario.setEstado(fila.getInt(6));
+            usuario.setMonto(fila.getString(7));
+>>>>>>> 346976c... Commit secundario con avances
             listDatos.add(usuario);
         }
         Adaptador adaptador=new Adaptador(listDatos);
@@ -142,6 +188,10 @@ public class BuscarAd extends AppCompatActivity {
                 epFecha.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getFecha());
                 epNumero.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getNumero());
                 epimagen.setImageBitmap(listDatos.get(recyclerView.getChildAdapterPosition(view)).getFoto());
+<<<<<<< HEAD
+=======
+                epMonto.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getMonto());
+>>>>>>> 346976c... Commit secundario con avances
                 verificarestado();
             }
         });
@@ -157,11 +207,19 @@ public class BuscarAd extends AppCompatActivity {
         String descripcion=epDescripcion.getText().toString();
         String fecha=epFecha.getText().toString();
         String numero=epNumero.getText().toString();
+<<<<<<< HEAD
+=======
+        String monto=epMonto.getText().toString();
+>>>>>>> 346976c... Commit secundario con avances
         ContentValues registro=new ContentValues();
         registro.put("usuario",usuario);
         registro.put("descripcion",descripcion);
         registro.put("fecha",fecha);
         registro.put("numero",numero);
+<<<<<<< HEAD
+=======
+        registro.put("monto",monto);
+>>>>>>> 346976c... Commit secundario con avances
 
        BaseDeDatos.update("usuarios",registro,"id=" + id,null);
        BaseDeDatos.close();
@@ -208,8 +266,27 @@ public class BuscarAd extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos=baseLogin.getReadableDatabase();
         Cursor fila=BaseDeDatos.rawQuery("select * from usuarios",null);
 
+<<<<<<< HEAD
         while(fila.moveToNext()){
             Usuarios  usuario=new Usuarios(null,null,null,null,null,null);
+=======
+        fila.moveToLast();
+        Usuarios  pusuario=new Usuarios(null,null,null,null,null,null, 0, null);
+        pusuario.setNombre(fila.getString(2));
+        if(pusuario.getNombre().equals(bpbusuario)||bpbusuario.equals("")) {
+            pusuario.setIdProyecto(fila.getString(0));
+            pusuario.setDescripcion(fila.getString(3));
+            pusuario.setFecha(fila.getString(4));
+            pusuario.setNumero(fila.getString(1));
+            pusuario.setFoto(getImage(fila.getBlob(5)));
+            pusuario.setEstado(fila.getInt(6));
+            pusuario.setMonto(fila.getString(7));
+            listDatos.add(pusuario);
+        }
+
+        while(fila.moveToPrevious()){
+            Usuarios  usuario=new Usuarios(null,null,null,null,null,null, 0, null);
+>>>>>>> 346976c... Commit secundario con avances
             usuario.setNombre(fila.getString(2));
             if(usuario.getNombre().equals(bpbusuario)||bpbusuario.equals("")) {
                 usuario.setIdProyecto(fila.getString(0));
@@ -217,6 +294,11 @@ public class BuscarAd extends AppCompatActivity {
                 usuario.setFecha(fila.getString(4));
                 usuario.setNumero(fila.getString(1));
                 usuario.setFoto(getImage(fila.getBlob(5)));
+<<<<<<< HEAD
+=======
+                usuario.setEstado(fila.getInt(6));
+                usuario.setMonto(fila.getString(7));
+>>>>>>> 346976c... Commit secundario con avances
                 listDatos.add(usuario);
             }
         }
@@ -234,10 +316,113 @@ public class BuscarAd extends AppCompatActivity {
                 epFecha.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getFecha());
                 epNumero.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getNumero());
                 epimagen.setImageBitmap(listDatos.get(recyclerView.getChildAdapterPosition(view)).getFoto());
+<<<<<<< HEAD
+=======
+                epMonto.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getMonto());
+>>>>>>> 346976c... Commit secundario con avances
             }
         });
     }
 
+<<<<<<< HEAD
+=======
+    public void BPBuscarNumero(View v){
+        listDatos.clear();
+        String bpbusuario=searchus.getText().toString();
+        BaseLogin  baseLogin=new BaseLogin(this,"usuarios",null,DATABASE_VERSION);
+        SQLiteDatabase BaseDeDatos=baseLogin.getReadableDatabase();
+        Cursor fila=BaseDeDatos.rawQuery("select * from usuarios",null);
+
+        fila.moveToLast();
+        Usuarios  pusuario=new Usuarios(null,null,null,null,null,null, 0, null);
+        pusuario.setNumero(fila.getString(1));
+        if(pusuario.getNumero().equals(bpbusuario)||bpbusuario.equals("")) {
+            pusuario.setIdProyecto(fila.getString(0));
+            pusuario.setDescripcion(fila.getString(3));
+            pusuario.setFecha(fila.getString(4));
+            pusuario.setNombre(fila.getString(2));
+            pusuario.setFoto(getImage(fila.getBlob(5)));
+            pusuario.setEstado(fila.getInt(6));
+            pusuario.setMonto(fila.getString(7));
+            listDatos.add(pusuario);
+        }
+
+        while(fila.moveToPrevious()){
+            Usuarios  usuario=new Usuarios(null,null,null,null,null,null, 0, null);
+            usuario.setNumero(fila.getString(1));
+            if(usuario.getNumero().equals(bpbusuario)||bpbusuario.equals("")) {
+                usuario.setIdProyecto(fila.getString(0));
+                usuario.setDescripcion(fila.getString(3));
+                usuario.setFecha(fila.getString(4));
+                usuario.setNombre(fila.getString(2));
+                usuario.setFoto(getImage(fila.getBlob(5)));
+                usuario.setEstado(fila.getInt(6));
+                usuario.setMonto(fila.getString(7));
+                listDatos.add(usuario);
+            }
+        }
+        BaseDeDatos.close();
+        Adaptador adaptador=new Adaptador(listDatos);
+        recyclerView.setAdapter(adaptador);
+
+        adaptador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewAnimator.showNext();
+                epUsuario.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getNombre());
+                epIdProyecto.setText("ID: "+listDatos.get(recyclerView.getChildAdapterPosition(view)).getIdProyecto());
+                epDescripcion.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getDescripcion());
+                epFecha.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getFecha());
+                epNumero.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getNumero());
+                epimagen.setImageBitmap(listDatos.get(recyclerView.getChildAdapterPosition(view)).getFoto());
+                epMonto.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getMonto());
+            }
+        });
+    }
+
+    public void BPBuscarID(View v){
+        listDatos.clear();
+        String bpbusuario=searchus.getText().toString();
+        BaseLogin  baseLogin=new BaseLogin(this,"usuarios",null,DATABASE_VERSION);
+        SQLiteDatabase BaseDeDatos=baseLogin.getReadableDatabase();
+        Cursor fila=BaseDeDatos.rawQuery("select * from usuarios",null);
+
+        while(fila.moveToNext()){
+            Usuarios  usuario=new Usuarios(null,null,null,null,null,null, 0, null);
+            usuario.setIdProyecto(fila.getString(0));
+            if(usuario.getIdProyecto().equals(bpbusuario)||bpbusuario.equals("")) {
+                usuario.setNumero(fila.getString(1));
+                usuario.setDescripcion(fila.getString(3));
+                usuario.setFecha(fila.getString(4));
+                usuario.setNombre(fila.getString(2));
+                usuario.setFoto(getImage(fila.getBlob(5)));
+                usuario.setEstado(fila.getInt(6));
+                usuario.setMonto(fila.getString(7));
+                listDatos.add(usuario);
+            }
+        }
+        BaseDeDatos.close();
+        Adaptador adaptador=new Adaptador(listDatos);
+        recyclerView.setAdapter(adaptador);
+
+        adaptador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewAnimator.showNext();
+                epUsuario.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getNombre());
+                epIdProyecto.setText("ID: "+listDatos.get(recyclerView.getChildAdapterPosition(view)).getIdProyecto());
+                epDescripcion.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getDescripcion());
+                epFecha.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getFecha());
+                epNumero.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getNumero());
+                epimagen.setImageBitmap(listDatos.get(recyclerView.getChildAdapterPosition(view)).getFoto());
+                epMonto.setText(listDatos.get(recyclerView.getChildAdapterPosition(view)).getMonto());
+            }
+        });
+    }
+
+
+
+>>>>>>> 346976c... Commit secundario con avances
     public void EliminarDatos(View v) {
         BaseLogin  baseLogin=new BaseLogin(this,"usuarios",null,DATABASE_VERSION);
         final SQLiteDatabase BaseDeDatos=baseLogin.getWritableDatabase();

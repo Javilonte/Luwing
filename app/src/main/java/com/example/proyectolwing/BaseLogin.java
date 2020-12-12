@@ -14,7 +14,11 @@ public class BaseLogin extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase BaseDeDatos) {
         BaseDeDatos.execSQL("create table login( numero text primary key, contraseña text, tipocuenta int)");
+<<<<<<< HEAD
         BaseDeDatos.execSQL("create table usuarios( id INTEGER primary key autoincrement, numero text, usuario text, descripcion text, fecha text, foto blob, estado int)");
+=======
+        BaseDeDatos.execSQL("create table usuarios( id INTEGER primary key autoincrement, numero text, usuario text, descripcion text, fecha text, foto blob, estado int, monto int)");
+>>>>>>> 346976c... Commit secundario con avances
     }
     //tipo de cuenta 1= administrador
     //tipo de cuenta 0= clinte

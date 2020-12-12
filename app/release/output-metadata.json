@@ -11,8 +11,13 @@
       "type": "SINGLE",
       "filters": [],
       "properties": [],
+<<<<<<< HEAD
       "versionCode": 1,
       "versionName": "1.0",
+=======
+      "versionCode": 6,
+      "versionName": "1.5",
+>>>>>>> 346976c... Commit secundario con avances
       "enabled": true,
       "outputFile": "app-release.apk"
     }

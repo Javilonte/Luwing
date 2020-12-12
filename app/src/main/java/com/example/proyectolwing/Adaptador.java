@@ -1,9 +1,17 @@
 package com.example.proyectolwing;
 
+<<<<<<< HEAD
+=======
+import android.graphics.Color;
+>>>>>>> 346976c... Commit secundario con avances
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+<<<<<<< HEAD
+=======
+import android.widget.LinearLayout;
+>>>>>>> 346976c... Commit secundario con avances
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +47,22 @@ public class Adaptador
         holder.IdProyecto.setText(listDatos.get(position).getIdProyecto());
         holder.IdDescripcion.setText(listDatos.get(position).getDescripcion());
         holder.foto.setImageBitmap(listDatos.get(position).getFoto());
+<<<<<<< HEAD
+=======
+        switch(listDatos.get(position).getEstado()){
+            case 1:
+                holder.linearAdminlist.setBackgroundResource(R.drawable.boton_rounded2);
+                break;
+
+            case 2:
+                holder.linearAdminlist.setBackgroundResource(R.drawable.boton_rounded3);
+                break;
+
+            case 3:
+                holder.linearAdminlist.setBackgroundResource(R.drawable.boton_rounded4);
+                break;
+        }
+>>>>>>> 346976c... Commit secundario con avances
     }
 
     @Override
@@ -61,6 +85,11 @@ public class Adaptador
         public class ViewHolderDatos extends RecyclerView.ViewHolder {
         TextView IdNombre, IdProyecto, IdDescripcion;
         ImageView foto;
+<<<<<<< HEAD
+=======
+        LinearLayout linearAdminlist;
+
+>>>>>>> 346976c... Commit secundario con avances
 
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
@@ -68,6 +97,10 @@ public class Adaptador
             IdProyecto=(TextView)itemView.findViewById(R.id.idProyecto);
             IdDescripcion=(TextView)itemView.findViewById(R.id.idDescripcion);
             foto=(ImageView)itemView.findViewById(R.id.Foto);
+<<<<<<< HEAD
+=======
+            linearAdminlist=(LinearLayout)itemView.findViewById(R.id.LinearAdminlist);
+>>>>>>> 346976c... Commit secundario con avances
 
         }
 

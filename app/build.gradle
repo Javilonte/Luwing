@@ -7,8 +7,13 @@ android {
         applicationId "com.example.proyectolwing"
         minSdkVersion 17
         targetSdkVersion 30
+<<<<<<< HEAD
         versionCode 1
         versionName "1.0"
+=======
+        versionCode 6
+        versionName "1.5"
+>>>>>>> 346976c... Commit secundario con avances
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

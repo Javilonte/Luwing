@@ -27,12 +27,20 @@ import java.util.Date;
 
 public class CrearProyecto extends AppCompatActivity {
 
+<<<<<<< HEAD
     private static final int DATABASE_VERSION = 4;
+=======
+    private static final int DATABASE_VERSION = 5;
+>>>>>>> 346976c... Commit secundario con avances
 
     EditText cpusuario;
     EditText cpdescripcion;
     EditText cpfecha;
     EditText cpnumero;
+<<<<<<< HEAD
+=======
+    EditText cpmonto;
+>>>>>>> 346976c... Commit secundario con avances
 
     ImageView cpimagen;
    private Bitmap imagen=null;
@@ -48,6 +56,10 @@ public class CrearProyecto extends AppCompatActivity {
         cpfecha = (EditText) findViewById(R.id.CPFecha);
         cpnumero = (EditText) findViewById(R.id.CPNumero);
         cpimagen = (ImageView) findViewById(R.id.CPImagen);
+<<<<<<< HEAD
+=======
+        cpmonto = (EditText) findViewById(R.id.CPMonto);
+>>>>>>> 346976c... Commit secundario con avances
 
 
     }
@@ -57,6 +69,10 @@ public class CrearProyecto extends AppCompatActivity {
         String descripcion = cpdescripcion.getText().toString();
         String fecha = cpfecha.getText().toString();
         String numero = cpnumero.getText().toString();
+<<<<<<< HEAD
+=======
+        String monto = cpmonto.getText().toString();
+>>>>>>> 346976c... Commit secundario con avances
 
 
 
@@ -68,6 +84,10 @@ public class CrearProyecto extends AppCompatActivity {
         registro.put("fecha", fecha);
         registro.put("numero", numero);
         registro.put("estado",1);
+<<<<<<< HEAD
+=======
+        registro.put("monto", monto);
+>>>>>>> 346976c... Commit secundario con avances
         BaseDeDatos.insert("usuarios", null, registro);
         Toast.makeText(getApplicationContext(), "Guardado", Toast.LENGTH_SHORT).show();
 

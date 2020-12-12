@@ -25,6 +25,7 @@
             <Button
                 android:id="@+id/Buscar"
                 style="@style/Botones"
+<<<<<<< HEAD
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -35,6 +36,47 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/SearchUs" />
 
+=======
+                android:layout_width="120dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_rounded"
+                android:onClick="BPBuscar"
+                android:text="Usuario"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/SearchUs" />
+
+            <Button
+                android:id="@+id/BuscarNumero"
+                style="@style/Botones"
+                android:layout_width="120dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_rounded"
+                android:onClick="BPBuscarNumero"
+                android:text="Número"
+                app:layout_constraintEnd_toStartOf="@+id/BuscarID"
+                app:layout_constraintStart_toEndOf="@+id/Buscar"
+                app:layout_constraintTop_toBottomOf="@id/SearchUs" />
+
+            <Button
+                android:id="@+id/BuscarID"
+                style="@style/Botones"
+                android:layout_width="120dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="136dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_rounded"
+                android:onClick="BPBuscarID"
+                android:text="ID"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/Buscar"
+                app:layout_constraintTop_toBottomOf="@id/SearchUs" />
+
+>>>>>>> 346976c... Commit secundario con avances
             <EditText
                 android:id="@+id/SearchUs"
                 android:layout_width="200dp"
@@ -53,7 +95,11 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:text="Introducir Código o Usuario"
+=======
+                android:text="Busqueda de proyecto"
+>>>>>>> 346976c... Commit secundario con avances
                 android:textColor="#01579B"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -162,6 +208,25 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <EditText
+<<<<<<< HEAD
+=======
+                android:id="@+id/EPMonto"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
+                android:background="@drawable/text_backgraunda"
+                android:ems="5"
+                android:hint="Monto"
+                android:inputType="number"
+                android:paddingStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/EPNumero"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.60"
+                app:layout_constraintStart_toEndOf="@+id/EPDescripcion"
+                app:layout_constraintTop_toBottomOf="@+id/EPFecha"
+                app:layout_constraintVertical_bias="0.50" />
+
+            <EditText
+>>>>>>> 346976c... Commit secundario con avances
                 android:id="@+id/EPUsuario"
                 android:layout_width="200dp"
                 android:layout_height="35dp"
@@ -219,6 +284,10 @@
                 android:maxLength="10"
                 android:paddingStart="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
+=======
+                app:layout_constraintHorizontal_bias="0.0"
+>>>>>>> 346976c... Commit secundario con avances
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/EPDescripcion" />
 
